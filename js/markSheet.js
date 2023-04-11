@@ -40,3 +40,5 @@ console.log(c);
 console.log(java);
 console.log(total);
 console.log(per);
+
+
