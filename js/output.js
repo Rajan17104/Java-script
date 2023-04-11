@@ -1,3 +1,4 @@
+
 alert("Hello");
 
 document.getElementById("titel").innerHTML = "Rajan"
@@ -10,8 +11,5 @@ let y = parseInt(prompt("please enter a value of y:"));
 let z;
 
 z = x + y;
-
-
-
 
 console.log(z);
