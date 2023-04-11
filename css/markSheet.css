@@ -5,10 +5,16 @@
 }
 
 table{
-    width: 350px;
+    width: 300px;
     margin: 0 auto;
+    
 }
 
 .table{
     display: flex;
+}
+
+.table tr td{
+    height: 25px;
+    font-weight: bold;
 }

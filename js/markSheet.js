@@ -1,6 +1,6 @@
 
 let n = prompt("please enter your name");
-let rollno = parseInt(prompt("please enter your rollno"));
+let rollno = parseInt(prompt("please enter your roll_no"));
 let html = parseInt(prompt("please enter your mark in html"));
 let css = parseInt(prompt("please enter your mark in css"));
 let c = parseInt(prompt("please enter your mark in c"));
