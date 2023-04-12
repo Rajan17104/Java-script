@@ -1,0 +1,28 @@
+.random{
+    width: 600px;
+    height: 200px;
+    background-color: brown;
+    display: flex;
+}
+
+.one{
+    width: 150px;
+    height: 100px;
+    background-color: black;
+    margin:40px;
+
+}
+.two{
+    width: 150px;
+    height: 100px;
+    background-color: black;
+    margin:40px;
+}
+
+
+
+.random a i{
+    color: #000;
+    margin-top: 80px;
+    font-size: 30px;
+}
