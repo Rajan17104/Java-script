@@ -32,13 +32,13 @@ document.getElementById("per").innerHTML = per;
 // document.write(total + " <br/>");
 
 
-console.log(n);
-console.log(rollno);
-console.log(html);
-console.log(css);
-console.log(c);
-console.log(java);
-console.log(total);
-console.log(per);
+// console.log(n);
+// console.log(rollno);
+// console.log(html);
+// console.log(css);
+// console.log(c);
+// console.log(java);
+// console.log(total);
+// console.log(per);
 
 
