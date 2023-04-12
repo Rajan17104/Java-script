@@ -1,34 +1,45 @@
+
+body{
+    background-color: aquamarine;
+}
+
 .random{
     width: 800px;
     height: 200px;
     display: flex;
+    margin: 0 auto;
+    margin-top: 80px;
     color: #fff;
 }
 
-.one ,.two,.ans{
-    width: 150px;
-    height: 100px;
+#one , #two{
     font-size: 120px;
-    background-color: #000;
+    text-align: center;
+    width: 140px;
+    height: 140px;
+    margin: 2rem;
     color: #fff;
-    margin:40px;
-    
+    background-color: #000;
 }
 
 .random a{
-    color: #000;  
-    margin-top: 80px;
-    font-size: 30px;
-    
+    color: #000;
+    padding-top: 72px;
+    font-size: 50px;
 }
 
 #ans{
-    width: 500px;
-    height: 40px;
     margin-top: 70px;
-
+    height: 50px;
+    width: 200px;
+    margin-left: 10px;
 }
 
-body{
-    background-color: aqua;
+#submit{
+    margin-top: 70px;
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    margin-left: 10px;  
+
 }

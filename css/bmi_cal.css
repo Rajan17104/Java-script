@@ -1,0 +1,53 @@
+form {
+    background-color: rgb(115, 230, 165);
+    height: 550px;
+    width: 400px;
+    padding: 20px;
+    margin: 0 auto;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    border: 2px solid black;
+    padding: 13px;
+
+}
+
+#gender{
+    font-size: 50px;
+}
+
+#height, #weight{
+    
+    border-radius: 30px;
+}
+
+.btn button {
+    border: 2px solid black;
+    width: 150px;
+    height: 45px;
+    border-radius: 30px;
+    margin-left: 70px;
+}
+
+#answer {
+    height: 38px;
+    width: 120px;
+    font-size: 16px;
+    color: black;
+    border: 2px solid black;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* .btn{
+    justify-content:center ;
+} */
