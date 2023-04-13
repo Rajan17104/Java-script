@@ -9,10 +9,12 @@ function data(){
     
     total = bill + ans;
 
+    // document.getElementById("tip").innerHTML = ans;
+    // document.getElementById("total").innerHTML = total;
+
     document.getElementById("tip").value = ans;
     document.getElementById("total").value = total;
 
     document.getElementById("tip").disabled = true;
     document.getElementById("total").disabled = true;
 }
-
