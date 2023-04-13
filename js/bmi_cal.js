@@ -7,11 +7,11 @@ function calculate() {
     bmical = weight / (meter * meter);
 
 
-    console.log(height);
-    console.log(weight);
-    console.log(meter);
-    console.log(bmical);
-    console.log(answer);
+    // console.log(height);
+    // console.log(weight);
+    // console.log(meter);
+    // console.log(bmical);
+    // console.log(answer);
     
 
     if (bmical > 17 && bmical < 18.5) {
@@ -24,7 +24,7 @@ function calculate() {
         document.getElementById("answer").innerHTML = "Overweight";
 
     } else {
-        document.getElementById("answer").innerHTML = "Severe Thinness";
+        document.getElementById("answer").innerHTML = "Sorry invaild input";
     }
 
 

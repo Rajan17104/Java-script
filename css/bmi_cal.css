@@ -11,6 +11,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 input {
     border: 2px solid black;
     padding: 13px;
@@ -18,7 +22,7 @@ input {
 }
 
 #gender{
-    font-size: 50px;
+    font-size: 60px;
 }
 
 #height, #weight{
@@ -44,10 +48,5 @@ input {
     border-radius: 30px;
 }
 
-h2 {
-    text-align: center;
-}
 
-/* .btn{
-    justify-content:center ;
-} */
+
