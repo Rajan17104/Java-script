@@ -1,10 +1,10 @@
 form {
-    background-color: rgb(115, 230, 165);
+    background-color: rgb(208, 130, 236);
     height: 550px;
     width: 400px;
     padding: 20px;
     margin: 0 auto;
-
+    border-radius: 20px;
 }
 
 h1 {

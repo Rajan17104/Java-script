@@ -1,4 +1,4 @@
-let one= document.getElementById("one").innerHTML = Math.floor(Math.random() * 10);
+let one = document.getElementById("one").innerHTML = Math.floor(Math.random() * 10);
 
 let two =document.getElementById("two").innerHTML = Math.floor(Math.random() * 10);
 
