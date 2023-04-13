@@ -1,0 +1,60 @@
+.main{
+    width: 400px;
+    height: 380px;
+    background-color: rgb(93, 81, 81);
+    margin: 0 auto;
+    padding: 30px;
+    font-size: 25px;
+    color: #fff;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+h1{
+    margin: 0 auto;
+    text-align: center;
+}
+
+span{
+    color: blue;
+}
+
+input{
+    border-radius: 20px;
+    padding: 10px 5px;
+}
+
+#bill{
+    margin-left: 74px;
+    text-align: center;
+}
+
+#per{
+    margin-left: 45px;
+    text-align: center;
+
+}
+
+#tip{
+    margin-left: 77px;
+    color: #fff;
+    text-align: center;
+
+}
+
+#total{
+    margin-left: 151px;
+    color: #fff;
+    text-align: center;
+
+}
+
+button{
+    background-color: rgb(209, 73, 73);
+    width: 120px;
+    height: 40px;
+    margin: 40px 0 0 140px;
+    font-size: 15px;
+    border-radius: 8px;
+}
