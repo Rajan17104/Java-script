@@ -13,7 +13,7 @@ const packages = (dest1,dest2,dest3) => { //2
     let c2 = costing(dest2);
     let c3 = costing(dest3);
 
-    let msg = dest1 + " cost you " + c1 + " and " + dest2 + " cost you " + c2 + dest2 + " cost you "; //7
+    let msg = dest1 + " cost you " + c1 + " and " + dest2 + " cost you " + c2 + dest3 + " cost you " + c3; //7
 
     return msg; //8
 }
