@@ -15,6 +15,9 @@ function data(){
     document.getElementById("tip").value = ans;
     document.getElementById("total").value = total;
 
-    document.getElementById("tip").disabled = true;
-    document.getElementById("total").disabled = true;
+    // document.getElementById("tip").disabled = true;
+    // document.getElementById("total").disabled = true;
+
 }
+
+
