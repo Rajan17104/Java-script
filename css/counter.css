@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    
+}
+
+#add, #sub{
+    width: 30px;
+    height: 30px;
+    background-color: cadetblue;
+    color: #fff;
+}
+
+#count{
+    margin: 0 20px;
+    
+}
