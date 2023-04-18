@@ -1,15 +1,15 @@
 const select = () =>{
 
-document.getElementById("ind").value;
-document.getElementById("aus").value;
-document.getElementById("canada").value;
-document.getElementById("us").value;
+// document.getElementById("ind").value;
+// document.getElementById("aus").value;
+// document.getElementById("canada").value;
+// document.getElementById("us").value;
 
-let ans=document.getElementById("country").value;
+let ans = document.getElementById("country").value;
 console.log(ans);
 // console.log(i);
 // console.log(a);
-// console.log(c);
+// console.log(c);  
 
 if(ans === "India"){
 

@@ -2,7 +2,6 @@
 let x = 0;
 
 
-
 const add = () =>{
 
     x = x + 1;
