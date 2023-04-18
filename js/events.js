@@ -117,3 +117,16 @@ let blur = document.getElementById("email");
 
 blur.addEventListener("blur" ,handleblur);
 
+
+/*submit*/
+
+function handlesubmit(){
+    submit.style.borderColor="blue"
+    console.log(submit.value);
+}
+
+let submit = document.getElementById("email");
+
+submit.addEventListener("blur" ,handlesubmit);
+
+
