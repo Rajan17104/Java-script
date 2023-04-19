@@ -1,12 +1,13 @@
 function handlefocus(){
 
     let r = document.getElementById("email").value;
-
-    if(r === r){
-        focus.style.borderColor="blue"
-        document.getElementById("err").innerHTML = "";
-    }
    
+
+    // if(r === r){
+    //     focus.style.borderColor="blue"
+    //     document.getElementById("err").innerHTML = "";
+    // }
+
 }
 
 let focus = document.getElementById("email");
@@ -27,5 +28,24 @@ function handleblur(){
 }
 
 let blur = document.getElementById("email");
-
 blur.addEventListener("blur" ,handleblur);
+
+
+/*keydown*/
+
+function handleKeyDown(){
+    let r = document.getElementById("email").value;
+
+
+    if(r === ''){
+        document.getElementById("err").innerHTML = "Please Enter Your Email Id";
+        keyDown.style.borderColor="red"
+    }else if(r != ""){
+        document.getElementById("err").innerHTML = "";
+        keyDown.style.borderColor="green"
+    }
+   
+} 
+
+let keyDown = document.getElementById("email");
+keyDown.addEventListener("keydown" ,handleKeyDown)

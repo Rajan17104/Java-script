@@ -130,3 +130,24 @@ let submit = document.getElementById("email");
 submit.addEventListener("blur" ,handlesubmit);
 
 
+
+
+/*****Window/Document event*****/
+
+/*load*/
+
+window.onload = function(){
+    console.log("Page Load");
+}
+
+/*unload*/
+
+window.onunload = function(){
+    console.log("Page unload");
+}
+
+/*resize*/
+
+window.onresize = function(){
+    console.log("Resize");
+}
