@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 
     <style>
@@ -15,6 +16,11 @@
             font-weight: bold;
             font-size: 20px;
         }
+
+        /* #show{
+            display: none;
+        } */
+
     </style>
 </head>
 <body>
@@ -24,13 +30,23 @@
 
         <span id="err"></span> <br><br>
 
-        <input type="password" name="password" id="password" placeholder="Enter Password"><br><br>
+        <input type="password" name="password" id="password" placeholder="Enter Password">
+        <i class="fa-solid fa-eye-slash" onclick="icon()" id="btn"></i> 
+        <i class="fa-sharp fa-solid fa-eye" onclick="icon()" ></i><br><br>
+
+        <span id="show"></span>
 
         <br><br>
 
         <input type="submit" name="submit" id="submit">
     </form>
+    <!-- <script>
+
+     $("#btn").click(function () {
+                $("#password").toggleClass("show")
+    });
     
+    </script> -->
 
     <script src="./js/error.js"></script>
 </body>

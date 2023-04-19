@@ -49,3 +49,17 @@ function handleKeyDown(){
 
 let keyDown = document.getElementById("email");
 keyDown.addEventListener("keydown" ,handleKeyDown)
+
+
+
+function icon(){
+
+    let x= document.getElementById("password").value ;
+
+    console.log(x);
+
+    document.getElementById("show").value;
+
+    
+
+}
