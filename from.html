@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/from.css">
+
+    <style>
+       
+
+        /* #show{
+            display: none;
+        } */
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+
+        <h1>From validation</h1>
+
+    <form>
+        <input type="text" name="fanme" id="fname" placeholder="First Name"> <br><br>
+
+        <input type="text" name="lname" id="lname" placeholder="Last Name"> <br><br>
+
+        <input type="text" name="mono" id="mono" placeholder="Mobail No"> <br><br>
+
+        <input type="text" name="email" id="email" placeholder="Enter Email">
+
+        <span id="e-err"></span> <br><br>
+
+        <div class="btn">
+            <input type="password" name="password" id="password" placeholder="Enter Password">
+                <i class="fa-sharp fa-solid fa-eye" onclick="icon()" id="on"></i>
+                <i class="fa-solid fa-eye-slash" onclick="icon()" id="off"></i><br><br>
+        </div><br>
+
+        <span id="p-err"></span> <br><br>
+
+        <input type="submit" name="submit" id="submit">
+    </form>
+
+</div>
+
+    <script src="./js/from.js"></script>
+</body>
+</html>
+
+
+<!-- if(x.type === "text"){
+    x.type = "password";
+    document.getElementById("off").style.display="none";
+    document.getElementById("on").style.display="";
+} -->
