@@ -18,7 +18,7 @@ document.getElementById("fee").innerHTML = "Fees is :" + fee;
         document.getElementById("cg-m").innerHTML = "Your grade = C"
     }else if(cgpa >=7.5){
         document.getElementById("cg-m").innerHTML = "Your grade = E"
-    }else if(cgpa >=7){
+    }else if(cgpa < 7.5){
         document.getElementById("cg-m").innerHTML = "Your grade = F"
     }
 
@@ -26,19 +26,19 @@ document.getElementById("fee").innerHTML = "Fees is :" + fee;
     let c = document.getElementById("cast").value;
    
     if(c === "op"){
-        c = (fee * 0)/100;
-        total = fee - c;
+        a = (fee * 0)/100;
+        total = fee - a;
     }else if(c === "ob" && cgpa >= 8.5){
-        c = (fee * 25)/100;
-        total = fee - c;    
+        a = (fee * 25)/100;
+        total = fee - a;    
     }else if(c === "sc" && cgpa >= 8.5){
-        c = (fee * 50)/100;
-        total = fee - c; 
+        a = (fee * 50)/100;
+        total = fee - a; 
     }else if(c === "st" && cgpa >= 8.5){
-        c = (fee * 100)/100;
-        total = fee - c; 
+        a = (fee * 100)/100;
+        total = fee - a; 
     }
 
-    document.getElementById("ca-m").innerHTML = "Your scholarship is :" + c;
+    document.getElementById("ca-m").innerHTML = "Your scholarship is :" + a;
     document.getElementById("total").innerHTML = "Total fees is :" + total;
 }
