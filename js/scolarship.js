@@ -10,7 +10,6 @@ function scolarship(){
 document.getElementById("fee").innerHTML = "Fees is :" + fee;
 
 
-
     if(cgpa >= 9){
         document.getElementById("cg-m").innerHTML = "Your grade = A";
     }else if(cgpa >= 8.5){
