@@ -56,13 +56,12 @@ let x = document.getElementById("password");
 
 function icon(){
 
-
     console.log(x);
 
     // document.getElementById("show").innerHTML = x;
 
     if(x.type === "password"){
-        x.type ="text";
+        x.type = "text";
         document.getElementById("off").style.display="block";
         document.getElementById("on").style.display="none";
     }else{
@@ -76,8 +75,7 @@ function icon(){
 
 function handlefocusP(){
 
-    let r = document.getElementById("password").value;
-   
+    let r = document.getElementById("password").value;  
     focusP.style.borderColor="blue"
 
 
