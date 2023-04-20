@@ -5,35 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+    .main{
+        margin: 0 auto;
+        width: 320px;
+        height: 320px;
+        background-color: cadetblue;
+        border: 2px solid #000;
+        border-radius: 20px;
+        margin-top: 50px;
+    }
+    #fees{
+        margin-left: 15px;
+        margin-top: 30px;
+    }
+    #cast{
+        margin-left: 13px;
+        width: 170px;
+        margin-top: 20px;
+    }
+    #cgpa{
+        margin-top: 20px;
+    }
+
+    #submit{
+        margin-left: 120px;
+        margin-top: 50px;
+        width: 80px;
+        height: 30px;
+        margin-bottom: 50px;
+    }
+
+    #fee{
+        padding-top: 80px;
+    }
+</style>
+
 </head>
 <body>
 
     <div class="main">
 
-    Enter Your Fees:- <input type="text" name="fees" id="fees"><br><br>
+        Enter Your Fees:- <input type="text" name="fees" id="fees"><br><br>
+        
+        Enter Your CGPA :- <input type="text" name="cgpa" id="cgpa">
+                            <br><br>
+
+        Enter your Cast :- <select name="cast" id="cast">
+                            <option value="">--select Your cast--</option>
+                            <option value="op" id="op">open</option>
+                            <option value="ob" id="ob">obc</option>
+                            <option value="sc" id="sc">sc</option>
+                            <option value="st" id="st">st</option>
+                        </select><br><br>
+
+
+        <input type="submit" name="submit" id="submit" onclick="scolarship()">
     
-    Enter Your CGPA :- <input type="text" name="cgpa" id="cgpa">
-                        <br><br>
-
-    Enter your Cast :- <select name="cast" id="cast">
-                        <option value="">--select Your cast--</option>
-                        <option value="op" id="op">open</option>
-                        <option value="ob" id="ob">obc</option>
-                        <option value="sc" id="sc">sc</option>
-                        <option value="st" id="st">st</option>
-                    </select><br><br>
-
-
-    <input type="submit" name="submit" id="submit" onclick="scolarship()">
-   
-    <br><br>
-    <span id="cg-m"></span>
-    <span id="ca-m"></span>
-    <span id="total"></span>
-</div>
-
-
-    
+        <br><br>
+        <span id="fee"></span><br><br>
+        <span id="cg-m"></span><br><br>
+        <span id="ca-m"></span><br><br>
+        <span id="total"></span>
+    </div>
 
     <script src="./js/scolarship.js"></script>
 </body>

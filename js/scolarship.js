@@ -7,7 +7,7 @@ function scolarship(){
     console.log(cgpa);
     console.log(cast);
 
-// document.getElementById("fees").innerHTML = fee;
+document.getElementById("fee").innerHTML = "Fees is :" + fee;
 
 
 
@@ -24,13 +24,22 @@ function scolarship(){
     }
 
 
-    // let total = document.getElementById("ca-m").value;
-
-    if(cast === "op"){
-        document.getElementById("ca-m").innerHTML = "No scolarship";
-    }else if(cast === "ob" && cgpa >= 8.5){
-        // total = fee / 0.25%
-        // document.getElementById("ca-m").innerHTML = "total";    
+    let c = document.getElementById("cast").value;
+   
+    if(c === "op"){
+        c = (fee * 0)/100;
+        total = fee - c;
+    }else if(c === "ob" && cgpa >= 8.5){
+        c = (fee * 25)/100;
+        total = fee - c;    
+    }else if(c === "sc" && cgpa >= 8.5){
+        c = (fee * 50)/100;
+        total = fee - c; 
+    }else if(c === "st" && cgpa >= 8.5){
+        c = (fee * 100)/100;
+        total = fee - c; 
     }
 
+    document.getElementById("ca-m").innerHTML = "Your scholarship is :" + c;
+    document.getElementById("total").innerHTML = "Total fees is :" + total;
 }
