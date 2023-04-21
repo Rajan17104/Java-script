@@ -62,5 +62,12 @@ function income(){
     }
 
     document.getElementById("ans").innerHTML = "your incometax " + tax;
+
+    document.getElementById("1").innerHTML = "your incometax " + tax;
+    document.getElementById("2").innerHTML = "your incometax " + tax;
+    document.getElementById("3").innerHTML = "your incometax " + tax;
+    document.getElementById("4").innerHTML = "your incometax " + tax;
+    document.getElementById("5").innerHTML = "your incometax " + tax;
+    document.getElementById("ans").innerHTML = "your incometax " + tax;
 }
 
