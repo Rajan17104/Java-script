@@ -50,7 +50,6 @@ let ex = final_co / final_se;
 
 // console.log(ex);
 
-
 let dateAp = new Date (date); 
 
     // console.log(date);

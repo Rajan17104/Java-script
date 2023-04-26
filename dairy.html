@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Dairy Production System</h1>
+
+    <div id="data">
+        Available Milk:<input type="text" name="Milk" id="milk"><br><br><br>
+
+        Butter Milk: <input type="text" name="Butter" id="butter">1KG/2LTR<br><br>
+        Curd: <input type="text" name="curd" id="curd">1KG/3LTR <br><br>
+        Paneer: <input type="text" name="paneer" id="paneer">1KG/6LTR <br><br>
+        Cheese: <input type="text" name="cheese" id="cheese">1KG/10LTR <br><br>
+
+    </div>
+    
+
+    <button onclick="handlemilk()">submit</button><br><br>
+    <div id="main">
+        <table border="1">
+            <tr>
+                <th>Product</th>
+                <th>LTR</th>
+                <th>Ready/Not ready</th>
+            </tr>
+
+            <tr>
+                <td id="pr"></td>
+                <td id="ltr"></td>
+                <td id="rn"></td>
+            </tr>
+        </table>
+    </div>
+    <br><br>
+
+    <div id="total">
+
+    </div>
+
+    <script src="./js/dairy.js"></script>
+</body>
+</html>
