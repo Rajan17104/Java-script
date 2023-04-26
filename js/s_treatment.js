@@ -44,24 +44,69 @@ const appDate = () => {
 
 let date = document.getElementById("date").value;
 
-console.log(date,final_se,final_co,final_te);
+// console.log(date,final_se,final_co,final_te);
 
 let ex = final_co / final_se;
 
-console.log(ex);
+// console.log(ex);
 
 
 let dateAp = new Date (date); 
 
     // console.log(date);
 
-    
+    let print = '';
 
-    for(i=0; i<final_se; i++){
-        dateAp.setDate(dateAp.getDate() + 7);
-        console.log(ex,dateAp);
+     print = print + '<table border="1"><tr><th>Sr no.</th><th>App-Date</th><th>Costing</th></tr>'
+
+    for(let i=0; i<final_se; i++){
+        if(i === 0){
+            print += '<tr>'
+            print += '<td>' + (i+1)+ '</td>'
+            print += '<td>' + dateAp.toLocaleDateString() + '</td>'
+            print += '<td>' + ex + '</td>'
+            print += '</tr>'
+            console.log(i+1, ex,dateAp.toLocaleDateString());
+        }else{
+            dateAp.setDate(dateAp.getDate() + 7);
+            print += '<tr>'
+            print += '<td>' + (i+1) + '</td>'
+            print += '<td>' + dateAp.toLocaleDateString() + '</td>'
+            print += '<td>' + ex + '</td>'
+            print += '</tr>'
+          
+            // console.log(i+1, ex,dateAp.toLocaleDateString());
+        }
+        
+        document.getElementById("tr-plan").style.display = 'block';
+        document.getElementById('tr-plan').innerHTML = print;
+
     }
 
+    print = print + '</table>'
+
+/****2 rite****/
+
+    // for(i=1; i<=final_se; i++){
+    //     if(i === 1){
+    //     print += '<tr>'
+    //         print += '<td>' + i+ '</td>'
+    //         print += '<td>' + dateAp.toLocaleDateString() + '</td>'
+    //         print += '<td>' + ex + '</td>'
+    //         print += '</tr>'
+    //         // console.log(i, ex,dateAp.toLocaleDateString());
+    //     }else{
+    //         print += '<tr>'
+    //         print += '<td>' + i + '</td>'
+    //         print += '<td>' + dateAp.toLocaleDateString() + '</td>'
+    //         print += '<td>' + ex + '</td>'
+    //         print += '</tr>'
+    //         dateAp.setDate(dateAp.getDate() + 7);
+    //         console.log(i, ex,dateAp.toLocaleDateString());
+    //     }
+    // }
+
+    
 }
 
 let d = document.getElementById("book");
