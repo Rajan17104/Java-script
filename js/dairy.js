@@ -57,6 +57,31 @@ const select = (p , l ,r) =>{
     //     document.getElementById("ans").innerHTML = "cheese" + ch;
     // }
 
+    let print = '';
+
+    print = print + '<table border="1"><tr><th>Sr no.</th><th>App-Date</th><th>Costing</th></tr>'
+
+       if(i === 0){
+           print += '<tr>'
+           print += '<td>' + data+ '</td>'
+           print += '<td>' +  + '</td>'
+           print += '<td>' + ex + '</td>'
+           print += '</tr>'
+           console.log(i+1, ex,dateAp.toLocaleDateString());
+       }else{
+           dateAp.setDate(dateAp.getDate() + 7);
+           print += '<tr>'
+           print += '<td>' + data + '</td>'
+           print += '<td>' + dateAp.toLocaleDateString() + '</td>'
+           print += '<td>' + ex + '</td>'
+           print += '</tr>'
+         
+           // console.log(i+1, ex,dateAp.toLocaleDateString());
+
+   }
+
+   print = print + '</table>'
+
 
 
     document.getElementById("main").style.display = "block"
