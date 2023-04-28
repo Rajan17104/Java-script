@@ -1,7 +1,7 @@
 
 //1.    Finding the maximum element in an array.
 
-let arr1 = [10 , 55 , 65 , 95 ,52]
+let arr1 = [10 , 55 , 65, 95 ,52]
 
 const arrMax = (arr) =>{
 
@@ -24,10 +24,10 @@ const arrMax = (arr) =>{
 const arrmin = (a) =>{
 
     let min = a[0];
-    for(i=0; i>a.length; i++){
+    for(i=0; i<a.length; i++){
         
-        if(arr[i] < min){
-            min = arr[i];
+        if(a[i] < min){
+            min = a[i];
         }
     }
 
@@ -141,4 +141,4 @@ const cheakArr = (arr ,elem) => {
 
 // }
 
-removeDup(arr1);
+// removeDup(arr1);

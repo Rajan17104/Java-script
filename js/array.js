@@ -38,8 +38,6 @@ rollno.map((v,i) => {
 
 // rollno.map((i,v) => console.log(v));                                                 
 
-
-
 //*****Update*****//
 
 rollno[3] = 99;
@@ -49,7 +47,7 @@ rollno[3] = 99;
 
 //*****Last*****//
 
-rollno.push(99); // add at last
+rollno.push(2); // add at last
 // console.log(rollno);
 
 
@@ -115,5 +113,5 @@ const fruit = ["mango" , "apple" , "orange" , "lemon"];
 // fruit.splice (2 ,0 ,"rajan","patel")
 // console.log(fruit);
 
-fruit.splice (2 , 2)
-console.log(fruit);
+fruit.splice (1 , 1)
+// console.log(fruit);

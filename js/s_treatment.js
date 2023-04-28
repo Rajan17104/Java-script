@@ -17,6 +17,7 @@ const select = (t , s, c) => {
     final_te = t;
 
     // console.log(t,c,s);
+
 }
 
 const handleTreatment = () => {
@@ -26,9 +27,9 @@ let val = document.getElementById("treatment").value;
 if(val === 'tc'){
     select("Teeth Cleanings" ,tc_s, tc_c);
 }else if(val === 'fl'){
-    select("Fillings" ,fl_s, fl_c);
+   select("Fillings" ,fl_s, fl_c);
 }else if(val === 'rct'){
-    select("Root canal Treatment" ,rct_s, rct_c);
+   select("Root canal Treatment" ,rct_s, rct_c);
 }else if(val ==='rc'){
     select("Rct + Cover" ,rc_s, rc_c);
 }else if(val === 'br'){
@@ -58,29 +59,28 @@ let dateAp = new Date (date);
 
      print = print + '<table border="1"><tr><th>Sr no.</th><th>App-Date</th><th>Costing</th></tr>'
 
-    for(let i=0; i<final_se; i++){
-        if(i === 0){
-            print += '<tr>'
-            print += '<td>' + (i+1)+ '</td>'
-            print += '<td>' + dateAp.toLocaleDateString() + '</td>'
-            print += '<td>' + ex + '</td>'
-            print += '</tr>'
-            console.log(i+1, ex,dateAp.toLocaleDateString());
-        }else{
-            dateAp.setDate(dateAp.getDate() + 7);
-            print += '<tr>'
-            print += '<td>' + (i+1) + '</td>'
-            print += '<td>' + dateAp.toLocaleDateString() + '</td>'
-            print += '<td>' + ex + '</td>'
-            print += '</tr>'
-          
-            // console.log(i+1, ex,dateAp.toLocaleDateString());
+        for(let i=0; i<final_se; i++){
+            if(i === 0){
+                print += '<tr>'
+                print += '<td>' + (i+1)+ '</td>'
+                print += '<td>' + dateAp.toLocaleDateString() + '</td>'
+                print += '<td>' + ex + '</td>'
+                print += '</tr>'
+                console.log(i+1, ex,dateAp.toLocaleDateString());
+            }else{
+                dateAp.setDate(dateAp.getDate() + 7);
+                print += '<tr>'
+                print += '<td>' + (i+1) + '</td>'
+                print += '<td>' + dateAp.toLocaleDateString() + '</td>'
+                print += '<td>' + ex + '</td>'
+                print += '</tr>'
+            
+                // console.log(i+1, ex,dateAp.toLocaleDateString());
+            }
+            
+            document.getElementById("tr-plan").style.display = 'block';
+            document.getElementById('tr-plan').innerHTML = print;
         }
-        
-        document.getElementById("tr-plan").style.display = 'block';
-        document.getElementById('tr-plan').innerHTML = print;
-
-    }
 
     print = print + '</table>'
 
