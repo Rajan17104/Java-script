@@ -1,63 +1,144 @@
-let a = 10;
-let b = 30;
-let c = 40;
 
-// maximum //
+//1.    Finding the maximum element in an array.
 
-if(a>b){
-    if(a>c){
-        console.log(a);
-    }else{
-        console.log(c);
+let arr1 = [10 , 55 , 65 , 95 ,52]
+
+const arrMax = (arr) =>{
+
+    let max = arr[0];
+    for(i=0; i<arr.length; i++){
+        
+        if(arr[i] > max){
+            max = arr[i];
+        }
     }
-}else{
-    if(b>c){
-        console.log(b);
-    }else{
-        console.log(c);
-    }
-    
+
+    console.log("Max no is:", max);
 }
 
-// minimum // 
+// arrMax(arr1);
 
 
-if(a<b){
-    if(a<c){
-        console.log(a);
-    }else{
-        console.log(c);
+//2.    Finding the minimum element in an array.
+
+const arrmin = (a) =>{
+
+    let min = a[0];
+    for(i=0; i>a.length; i++){
+        
+        if(arr[i] < min){
+            min = arr[i];
+        }
     }
-}else{
-    if(b<c){
-        console.log(b);
-    }else{
-        console.log(c);
-    }
-    
+
+    console.log("Min no is", min);
+
 }
 
-// sum //
-
-let sum = a + b + c;
-
-console.log(sum);
+// arrmin(arr1);
 
 
-// average // 
 
-let avg = (a + b + c) / 3 ;
+//3.    Sorting an array in ascending order.
 
-console.log(avg);
+const shortAsc = (arr) =>{
+
+    arr.sort((a ,b) => a - b);
+
+        console.log(arr);
+}
+
+// shortAsc(arr1)
 
 
-// merging //
 
-let x = [10 ,20 ,30];
-let y = [40 ,50 ,60];
-let z = [70, 80 ,90];
+//4.    Sorting an array in descending order.
 
-let ans = x.concat(y,z);
-console.log(ans);
 
-//
+const shortDes = (arr) =>{
+
+    arr.sort((a,b) => b-a);
+
+    console.log(arr);
+
+}
+
+// shortAsc(arr1);  
+
+
+//5.    Reversing an array.
+
+
+const revArr = (arr) => {
+
+    arr.reverse();
+
+    console.log(arr);
+
+}
+
+// revArr(arr1);
+
+
+//6.    Finding the sum of all elements in an array.
+
+
+const sumArr = (arr) =>{
+
+    let sum = 0;
+
+    arr.map((a) => sum = sum + a);
+
+    console.log(sum);
+
+}
+
+// sumArr(arr1);
+
+
+//7.    Finding the average of all elements in an array.
+
+const avgArr = (arr) =>{
+
+    let sum = 0, avg = 0;
+
+    arr.map((a) => sum = sum + a);
+
+    avg = sum / arr.length;
+
+    console.log(avg);
+}
+
+// avgArr(arr1);
+
+
+//8.    Checking if an array contains a specific element.
+
+
+const cheakArr = (arr ,elem) => {
+
+    let ans = arr.includes(elem);
+
+    console.log(ans);
+
+}
+
+// cheakArr(arr1, 55);
+
+
+//9.    Removing duplicates from an array.
+
+
+// const removeDup = (arr) =>{
+
+//     let uniqeElem[];
+
+//     arr.map((a) => uniqeElem )
+
+//     if(uniqeElem ){
+
+//     }
+
+// }
+
+removeDup(arr1);
