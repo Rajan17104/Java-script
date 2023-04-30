@@ -1,27 +1,31 @@
-arr = [];
-
+let arr = [];
 
 const todoData = () =>{
 
-// console.log(arr);
-
 let val = document.getElementById("todo").value;
 
-console.log(val);
+// console.log(val);    
 
-document.getElementById("ans").innerHTML = val;
-document.getElementById("ans").style.display = 'block';
-document.getElementById("i").style.display = 'block'
+    document.getElementById("ans").innerHTML = val;
+    document.getElementById("ans").style.display = 'block';
+    document.getElementById("i").style.display = 'block'
 
 arr.push(val);
-console.log(arr);
+console.log(arr.toString());
 
- let a ;
- a= a + arr;
+//  arr[val];
 
-parseInt(document.getElementById("ans").innerHTML  = a);
+ document.getElementById('ans').innerHTML = arr;
 
-console.log(a);
+
+//     let print = '<ul>';
+//     arr.map((a) =>{
+//         print = print + '<li>' + a.arr + ""+ a.i + '</li>'; 
+
+//     print =print + '</ul>'
+// });
+
+// console.log(a);
 
 }
 
@@ -30,4 +34,4 @@ const remove = () =>{
     document.getElementById("ans").innerHTML = '';
     document.getElementById("i").innerHTML = '';
 
-}
+}   

@@ -67,7 +67,7 @@ let dateAp = new Date (date);
                 print += '<td>' + ex + '</td>'
                 print += '</tr>'
                 console.log(i+1, ex,dateAp.toLocaleDateString());
-            }else{
+            }else{          
                 dateAp.setDate(dateAp.getDate() + 7);
                 print += '<tr>'
                 print += '<td>' + (i+1) + '</td>'
