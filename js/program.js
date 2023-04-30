@@ -2,6 +2,8 @@
 //1.    Finding the maximum element in an array.
 
 let arr1 = [10 , 55 , 65, 95 ,52]
+let arr2 = [20 ,30];
+let arr3 = [40 ,50];
 
 const arrMax = (arr) =>{
 
@@ -129,16 +131,93 @@ const cheakArr = (arr ,elem) => {
 //9.    Removing duplicates from an array.
 
 
-// const removeDup = (arr) =>{
+const removeDup = (arr) =>{
 
-//     let uniqeElem[];
+    let uniqeElem;
 
-//     arr.map((a) => uniqeElem )
+    arr.map((a) => uniqeElem )
 
-//     if(uniqeElem ){
+    if(uniqeElem){
 
-//     }
+    }
 
-// }
+}
 
 // removeDup(arr1);
+
+// 10.    Merging two arrays into a new array.
+
+const merging = (arr1,arr2,arr3) =>{
+
+let mer;
+
+   mer = arr1.concat(arr2,arr3);
+
+    console.log(mer);
+
+}
+
+// merging(arr1 ,arr2 ,arr3);
+
+// 11.    Splitting an array into two arrays based on a condition.
+
+   
+let spt = "how are you rajan";
+
+const Splitting = (arr) =>{
+
+ arr = spt.split(" ");
+
+   console.log(arr);
+
+}
+
+// Splitting(spt);
+
+
+// 18.    Finding the mode of an array.
+
+
+let list = [5 , 6 , 9, 10 ,5 , 6 , 6]
+
+const mode = (ans) =>{
+
+  ans = {};
+list.map((e)=> {
+  if(ans[e] === undefined) {
+    ans[e] = 0
+  }
+  ans[e] += 1;
+})
+
+    console.log(ans);
+
+}
+      
+// mode(list);
+
+// 19.    Checking if two arrays are equal or not.
+
+
+// let a = [1, 2, 3];
+// let b = [1, 2, 3];
+
+// let c = Array(1, 2, 3);
+
+// let d;
+//  d= (a === b && b === c);
+ 
+// console.log(d);
+ 
+
+// 20.    Finding the union of two arrays.
+
+
+var a = [34, 35, 45, 48, 49];
+var b = [48, 55];
+var union = [...new Set([...a, ...b])];
+console.log(union);
+
+
+
+
