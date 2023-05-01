@@ -281,8 +281,30 @@ const smallest = (arr ,ind) =>{
 
 }
 
-smallest(arr1, 3);
+// smallest(arr1, 3);
 
 
-// 17.    Finding the median of an array.
+// 19.    Checking if two arrays are equal or not.
 
+let first = [10 , 20 ,30];
+let second = [10 , 20 ,30];
+
+const equal = (fi,se) =>{
+
+    if(fi.length === se.length){
+    
+        if(fi === se){
+           console.log('equal');
+        }else{
+            console.log('not equal');
+        }    
+
+        // console.log('equal');
+
+    }else{
+        console.log('not equal');
+    }
+
+};
+
+equal(first,second);
