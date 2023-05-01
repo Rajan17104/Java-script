@@ -1,9 +1,9 @@
 
 //1.    Finding the maximum element in an array.
 
-let arr1 = [10 , 55 , 65, 95 ,52]
-let arr2 = [20 ,30];
-let arr3 = [40 ,50];
+let arr1 = [10 , 55 , 55 , 65,  95 ,52 ,22]
+// let arr2 = [20 ,30];
+// let arr3 = [40 ,50];
 
 const arrMax = (arr) =>{
 
@@ -133,13 +133,16 @@ const cheakArr = (arr ,elem) => {
 
 const removeDup = (arr) =>{
 
-    let uniqeElem;
+    let uniqeElem=[];
 
-    arr.map((a) => uniqeElem )
+    arr.map((a) => {
 
-    if(uniqeElem){
-
-    }
+        if(!uniqeElem.includes(a)){
+            uniqeElem.push(a);
+        };
+    
+    });
+    console.log(uniqeElem);
 
 }
 
@@ -159,65 +162,127 @@ let mer;
 
 // merging(arr1 ,arr2 ,arr3);
 
+
+
 // 11.    Splitting an array into two arrays based on a condition.
 
-   
-let spt = "how are you rajan";
+const SplitArrCon = (arr) =>{
 
-const Splitting = (arr) =>{
+    let a1 = [];
+    let a2 = [];
 
- arr = spt.split(" ");
+    arr.map((a) =>{
+        
+        if(a > 60){
+            a1.push(a);
+        }else{
+            a2.push(a);
+        }
 
-   console.log(arr);
+    })
+
+    console.log(a1);
+    console.log(a2);
+
+}
+
+// SplitArrCon(arr1);
+
+
+const SplitArrConStr = (arr) =>{
+
+let a3 = [];
+let a4 = [];
+
+arr.map((a) =>{
+
+    if(a > 0){
+        a3.push(a)
+    }else{
+        a4.push(a);
+    }
+
+    })
+
+    // if(typeof a === number){
+    //     a3.push(a)
+    // }else if(typeof a === string){
+    //     a4.push(a);
+    // }
+
+    // })
+
+    // console.log(a3);
+    // console.log(a4);
 
 }
 
-// Splitting(spt);
+// SplitArrConStr(arr1)
 
 
-// 18.    Finding the mode of an array.
+// 13.    Rotating an array by a given number of positions.
 
+const rotate = (arr , ind) =>{
 
-let list = [5 , 6 , 9, 10 ,5 , 6 , 6]
+    let a = arr.slice(arr);
+   let b = arr.slice(ind);
 
-const mode = (ans) =>{
+    let ans= b.concat(a);
 
-  ans = {};
-list.map((e)=> {
-  if(ans[e] === undefined) {
-    ans[e] = 0
-  }
-  ans[e] += 1;
-})
+console.log(ans);
 
-    console.log(ans);
 
 }
-      
-// mode(list);
-
-// 19.    Checking if two arrays are equal or not.
 
 
-// let a = [1, 2, 3];
-// let b = [1, 2, 3];
-
-// let c = Array(1, 2, 3);
-
-// let d;
-//  d= (a === b && b === c);
- 
-// console.log(d);
- 
-
-// 20.    Finding the union of two arrays.
+// rotate(arr1, 1);
 
 
-var a = [34, 35, 45, 48, 49];
-var b = [48, 55];
-var union = [...new Set([...a, ...b])];
-console.log(union);
+// 14.    Finding the second largest element in an array.
+
+const MaxElm = (arr ,ind) =>{
+
+    let uniqeElem=[];
+
+    arr.map((a) => {
+
+        if(!uniqeElem.includes(a)){
+            uniqeElem.push(a);
+        };
+    
+    });
+
+    uniqeElem.sort((a,b) => b - a);
+
+    console.log( uniqeElem[ind-1],uniqeElem);
+
+}
+
+// MaxElm(arr1 , 3);
 
 
+// 15.    Finding the k-th smallest element in an array.
 
+const smallest = (arr ,ind) =>{
+
+    let uniqeElem=[];
+
+    arr.map((a) => {
+
+        if(!uniqeElem.includes(a)){
+            uniqeElem.push(a);
+        };
+    
+    });
+
+    uniqeElem.sort((a,b) => a - b);
+
+    console.log(uniqeElem[ind-1],uniqeElem);
+
+}
+
+smallest(arr1, 3);
+
+
+// 17.    Finding the median of an array.
 

@@ -8,24 +8,24 @@ let val = document.getElementById("todo").value;
 
     document.getElementById("ans").innerHTML = val;
     document.getElementById("ans").style.display = 'block';
-    document.getElementById("i").style.display = 'block'
+    // document.getElementById("i").style.display = 'block'
 
-arr.push(val);
-console.log(arr.toString());
+        arr.push(val);
+        console.log(arr.toString());
+        
+        //  arr[val];
+        
 
-//  arr[val];
+    let print = '<ul>';
+    arr.map((a) =>{
+        print = print + '<li>' + a + "" + '</li>'; 
 
- document.getElementById('ans').innerHTML = arr;
+    print =print + '</ul>'
+    document.getElementById('ans').innerHTML = print;
+    
+    });
 
-
-//     let print = '<ul>';
-//     arr.map((a) =>{
-//         print = print + '<li>' + a.arr + ""+ a.i + '</li>'; 
-
-//     print =print + '</ul>'
-// });
-
-// console.log(a);
+console.log(a);
 
 }
 
