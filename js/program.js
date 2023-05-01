@@ -293,14 +293,17 @@ const equal = (fi,se) =>{
 
     if(fi.length === se.length){
     
-        if(fi === se){
-           console.log('equal');
-        }else{
-            console.log('not equal');
-        }    
-
-        // console.log('equal');
-
+        // for( let i=0; i<fi.length; i++){ 
+        
+            if(fi === se){
+                console.log('equal');
+            }else{
+                console.log('not equal');
+            }    
+        
+        // }
+            // console.log('equal');
+    
     }else{
         console.log('not equal');
     }
@@ -308,3 +311,23 @@ const equal = (fi,se) =>{
 };
 
 equal(first,second);
+
+
+// 17.  Finding the median of an array.
+
+// let arr = [1,2,3,4,5,6,7];
+
+// const median = () =>{
+
+//     let a = arr.length;
+
+//     let ans = arr.sort((a,b) => a-b);
+
+//     let med = Math.floor(a/2);
+
+//     return ans[med];
+
+    
+// }
+
+// median(arr);
