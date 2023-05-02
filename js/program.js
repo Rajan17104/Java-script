@@ -1,7 +1,7 @@
 
 //1.    Finding the maximum element in an array.
 
-let arr1 = [10 , 55 , 55 , 65,  95 ,52 ,22]
+let arr1 = [10 , 54 , 65,  95 ,52 ,22]
 // let arr2 = [20 ,30];
 // let arr3 = [40 ,50];
 
@@ -286,23 +286,30 @@ const smallest = (arr ,ind) =>{
 
 // 19.    Checking if two arrays are equal or not.
 
-let first = [10 , 20 ,30];
-let second = [10 , 20 ,30];
+let first = [10 , 20 ,40,30];
+let second = [10 , 20 ,40,30];
 
 const equal = (fi,se) =>{
 
     if(fi.length === se.length){
+
+      let flag = 0;
     
-        // for( let i=0; i<fi.length; i++){ 
+        for( let i=0; i<fi.length; i++){ 
         
-            if(fi === se){
+            if(fi[i] !== se[i]){
+              flag = 1;
+              break;
+            }
+        
+        }
+
+            if(flag === 0){
                 console.log('equal');
             }else{
                 console.log('not equal');
-            }    
-        
-        // }
-            // console.log('equal');
+            }
+     
     
     }else{
         console.log('not equal');
@@ -310,24 +317,27 @@ const equal = (fi,se) =>{
 
 };
 
-equal(first,second);
+// equal(first,second);
 
 
 // 17.  Finding the median of an array.
 
-// let arr = [1,2,3,4,5,6,7];
+const median = (arr) =>{
 
-// const median = () =>{
+    // let sArr = arr.sort((a,b) => a - b);
 
-//     let a = arr.length;
+    // console.log(sArr);
 
-//     let ans = arr.sort((a,b) => a-b);
+    let i = Math.floor(arr.length/2);
 
-//     let med = Math.floor(a/2);
+    if(arr.length % 2 == 0){
+        let ans = (arr[i] + arr[i-1])/2;
+        console.log(ans);
+    }else{
+        console.log(arr[i]);
+    }
 
-//     return ans[med];
+}
 
-    
-// }
 
-// median(arr);
+median(arr1);
