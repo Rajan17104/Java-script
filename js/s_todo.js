@@ -4,12 +4,14 @@ let arr = [];
 
 let update = false;
 
-let newval =null ;
+// let newval =null ;
 let uid = null;
 
 const handleInsert = () =>{
 
     let val = document.getElementById("todoForm").value;
+
+    document.getElementById("todoForm").value = '';
 
     arr.push(val);
 
@@ -52,6 +54,7 @@ handlePrint();
 const handleUpdate = (i) =>{
 
   update = true;
+  uid = i;
 
   document.getElementById("todoForm").value = arr[i];
 
@@ -65,7 +68,7 @@ const handleDes = () =>{
     handleInsert();
   }
 
-}
+} 
 
 const handleUpdateData = () =>{
 
@@ -74,6 +77,14 @@ const handleUpdateData = () =>{
   let newval = document.getElementById("todoForm").value;
 
   console.log(newval);
+
+  arr[uid] =  newval;
+
+  handlePrint();
+
+  update = false;
+
+  document.getElementById("todoForm").value = "";
 
   event.preventDefault();
 
