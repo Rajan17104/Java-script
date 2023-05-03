@@ -2,81 +2,82 @@ let form = document.getElementById("data");
 
 let arr = [];
 
+let update = false;
+
+let newval =null ;
+let uid = null;
+
 const handleInsert = () =>{
 
     let val = document.getElementById("todoForm").value;
 
     arr.push(val);
 
-    // console.log(arr);
+    handlePrint();
 
-    let print = '<ul>'
-
-    arr.map((t) =>{     
-      // print += '<li>' + t + '<button onclick=handleRemove()>' + 'X' + '</button>' + '</li>';
-      // print += '<li>' + t + '<button'> + 'X' + '</button>' + '</li>';
-
-    })
-
-    print = print + '</ul>'
-
-    document.getElementById('ans').innerHTML = print;
-
-    // console.log(val);
+    console.log('insert call');
 
     event.preventDefault();
 
 }
 
-const handleRemove = () =>{
+const handlePrint = () =>{
 
-// document.getElementById("ans").innerHTML = '';
-// document.getElementById("btn").innerHTML = '';
+  let print = '<ul>'
 
-  // let index =arr.indexOf(arr);
+  arr.map((t, i) =>{     
+    print += '<li>' + t + '<button onclick="handleRemove('+ i +')">X</button>' +
+     '<button onclick="handleUpdate('+ i +')">Edit</button>' + '</li>';
 
-  // if(index > 0){
-  //   arr.splice(index,1);
-  // }
+  })
 
-  // console.log(arr);
+  print = print + '</ul>'
 
-
-
-//   let i = arr.findIndex(() => {});
-
-//   arr.splice(i > 1);
-  
-//   console.log(arr);
-
-//   event.preventDefault();
-
-//   handleInsert();
-
-// }
-
-
-
-arr.map((v) =>{
-
-  console.log(v);
-
-  arr.pop(v);
-  console.log(arr);
-})
-
-
-
-
-// let remove =document.getElementById('ans1')
-
-// remove.style.display='none';
-
-
+  document.getElementById('ans').innerHTML = print;
 
 }
-// main.addEventListener("click",handleRemove);
 
 
-form.addEventListener("submit",handleInsert);
-btn.addEventListener("click",handleRemove);
+const handleRemove = (i) =>{
+
+arr.splice(i,1);
+
+console.log(arr);
+
+handlePrint();
+
+}
+
+
+const handleUpdate = (i) =>{
+
+  update = true;
+
+  document.getElementById("todoForm").value = arr[i];
+
+}
+
+const handleDes = () =>{
+
+  if(update){
+    handleUpdateData();
+  }else{
+    handleInsert();
+  }
+
+}
+
+const handleUpdateData = () =>{
+
+  console.log('Update call');
+
+  let newval = document.getElementById("todoForm").value;
+
+  console.log(newval);
+
+  event.preventDefault();
+
+}
+
+form.addEventListener("submit",handleDes);
+
