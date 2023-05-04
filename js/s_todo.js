@@ -4,7 +4,6 @@ let arr = [];
 
 let update = false;
 
-// let newval =null ;
 let uid = null;
 
 const handleInsert = () =>{
@@ -14,6 +13,8 @@ const handleInsert = () =>{
     document.getElementById("todoForm").value = '';
 
     arr.push(val);
+
+    localStorage.setItem("todo", JSON.stringify(arr));
 
     handlePrint();
 
@@ -27,7 +28,10 @@ const handlePrint = () =>{
 
   let print = '<ul>'
 
-  arr.map((t, i) =>{     
+  let localdata = JSON.parse(localStorage.getItem('todo'));
+
+  localdata.map((t, i) =>{  
+
     print += '<li>' + t + '<button onclick="handleRemove('+ i +')">X</button>' +
      '<button onclick="handleUpdate('+ i +')">Edit</button>' + '</li>';
 
@@ -44,12 +48,13 @@ const handleRemove = (i) =>{
 
 arr.splice(i,1);
 
+localStorage.setItem("todo", JSON.stringify(arr));
+
 console.log(arr);
 
 handlePrint();
 
 }
-
 
 const handleUpdate = (i) =>{
 
@@ -68,6 +73,8 @@ const handleDes = () =>{
     handleInsert();
   }
 
+  event.preventDefault();
+
 } 
 
 const handleUpdateData = () =>{
@@ -84,6 +91,8 @@ const handleUpdateData = () =>{
 
   update = false;
 
+  localStorage.setItem("todo", JSON.stringify(arr));
+
   document.getElementById("todoForm").value = "";
 
   event.preventDefault();
@@ -92,3 +101,4 @@ const handleUpdateData = () =>{
 
 form.addEventListener("submit",handleDes);
 
+window.onload =handlePrint;
