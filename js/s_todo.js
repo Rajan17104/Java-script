@@ -9,59 +9,73 @@ let uid = null;
 const handleInsert = () =>{
 
     let val = document.getElementById("todoForm").value;
-
+    
+    console.log(val);
     document.getElementById("todoForm").value = '';
 
-    arr.push(val);
+    let localdata =JSON.parse(localStorage.getItem("todo"));
 
-    localStorage.setItem("todo", JSON.stringify(arr));
+    if(localdata){
+      localdata.push(val);
+      localStorage.setItem("todo",JSON.stringify(localdata));
+    }else{
+      arr.push(val);
+      localStorage.setItem("todo",JSON.stringify(arr));
+    }
 
     handlePrint();
-
-    console.log('insert call');
 
     event.preventDefault();
 
 }
 
+
+
 const handlePrint = () =>{
 
-  let print = '<ul>'
-
   let localdata = JSON.parse(localStorage.getItem('todo'));
+  if(localdata){
+    let print = '<ul>'
 
-  localdata.map((t, i) =>{  
+    localdata.map((t, i) =>{  
 
-    print += '<li>' + t + '<button onclick="handleRemove('+ i +')">X</button>' +
-     '<button onclick="handleUpdate('+ i +')">Edit</button>' + '</li>';
+      print += '<li>' + t + '<button onclick="handleRemove('+ i +')">X</button>' +
+      '<button onclick="handleUpdate('+ i +')">Edit</button>' + '</li>';
 
-  })
+    });
 
-  print = print + '</ul>'
+    print = print + '</ul>'
 
-  document.getElementById('ans').innerHTML = print;
+    document.getElementById('ans').innerHTML = print;
 
+  }
 }
 
 
 const handleRemove = (i) =>{
 
-arr.splice(i,1);
+  let localdata = JSON.parse(localStorage.getItem('todo'));
 
-localStorage.setItem("todo", JSON.stringify(arr));
+  localdata.splice(i,1);
 
-console.log(arr);
+  localStorage.setItem("todo", JSON.stringify(localdata));
 
-handlePrint();
+  console.log(localdata);
+
+  handlePrint();
 
 }
 
 const handleUpdate = (i) =>{
 
   update = true;
+ 
+  let localdata = JSON.parse(localStorage.getItem('todo'));
+  console.log(localdata[i])
+
   uid = i;
 
-  document.getElementById("todoForm").value = arr[i];
+  document.getElementById("todoForm").value = localdata[i];
 
 }
 
@@ -80,20 +94,22 @@ const handleDes = () =>{
 const handleUpdateData = () =>{
 
   console.log('Update call');
+   
+  let localdata = JSON.parse(localStorage.getItem('todo'));
 
   let newval = document.getElementById("todoForm").value;
 
   console.log(newval);
 
-  arr[uid] =  newval;
-
-  handlePrint();
+  localdata[uid] =  newval;
 
   update = false;
 
-  localStorage.setItem("todo", JSON.stringify(arr));
+  localStorage.setItem("todo", JSON.stringify(localdata));
 
   document.getElementById("todoForm").value = "";
+
+handlePrint();
 
   event.preventDefault();
 
