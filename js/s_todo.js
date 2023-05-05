@@ -109,7 +109,7 @@ const handleUpdateData = () =>{
 
   document.getElementById("todoForm").value = "";
 
-handlePrint();
+  handlePrint();
 
   event.preventDefault();
 
@@ -117,4 +117,4 @@ handlePrint();
 
 form.addEventListener("submit",handleDes);
 
-window.onload =handlePrint;
+window.onload = handlePrint;
