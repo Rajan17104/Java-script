@@ -110,11 +110,18 @@ const insert = () =>{
 
     let val=document.getElementById('input').value;
 
-    console.log( val);
-
-    arr.push(val);
-
     document.getElementById('input').value = '';
+
+
+    let localdata =JSON.parse(localStorage.getItem("todo"));
+
+    if(localdata){
+        localdata.push(val);
+        localStorage.setItem("todo",JSON.stringify(localdata));
+    }else{
+        arr.push(val);
+        localStorage.setItem("todo",JSON.stringify(arr));
+    }   
 
     hadleprint();
     event.preventDefault();
@@ -122,23 +129,33 @@ const insert = () =>{
 
 const hadleprint = () =>{
 
-    let print = '<ul>'
+    let localdata = JSON.parse(localStorage.getItem('todo'));
 
-        arr.map((v,i)=>{
-            print = print + '<li>' + v + '<button onclick = "remove('+ i +')">Remove</button>' + '<button onclick = "handleupdate('+ i +')">Edit</button>' +  '</li>'
-        })
+    if(localdata){
+        let print = '<ul>'
 
-    print = print + '</ul>'
+            localdata.map((v,i)=>{
+                print = print + '<li>' + v + '<button onclick = "remove('+ i +')">Remove</button>' + '<button onclick = "handleupdate('+ i +')">Edit</button>' +  '</li>'
+            })
 
-    document.getElementById('ans').innerHTML =print;
+        print = print + '</ul>'
 
+        document.getElementById('ans').innerHTML =print;
+ 
+
+    }
+   
 }
 
 const remove = (i) =>{
 
-    arr.splice(i,1);
+    let localdata = JSON.parse(localStorage.getItem('todo'));
 
-    console.log(arr);
+    localdata.splice(i,1);
+
+    localStorage.setItem("todo", JSON.stringify(localdata));
+
+    console.log(localdata);
 
     hadleprint();
 
@@ -147,10 +164,13 @@ const remove = (i) =>{
 const handleupdate = (i) =>{
 
     update = true;
+    
+    let localdata = JSON.parse(localStorage.getItem('todo'));
+    console.log(localdata[i])
 
     id = i;
 
-    document.getElementById('input').value = arr[i];
+    document.getElementById('input').value = localdata[i];
 
 }
 
@@ -158,16 +178,23 @@ const updatedata = () =>{
 
 console.log('update call');
 
+let localdata = JSON.parse(localStorage.getItem('todo'));
+
 let newval = document.getElementById("input").value;
 
 console.log(newval);
 
-arr[id] = newval;
+localdata[id] = newval;
 
-document.getElementById("ans").value = newval;
+update = false;
+
+localStorage.setItem("todo", JSON.stringify(localdata));
+
+document.getElementById("todoForm").value = "";
 
 hadleprint();
 
+    event.preventDefault();
 
 }
 
@@ -179,7 +206,10 @@ const decision = () => {
         insert();
     }
 
+    event.preventDefault();
+
 }
+
 
 
 fromref.addEventListener('submit',decision)

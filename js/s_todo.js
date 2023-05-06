@@ -105,7 +105,7 @@ const handleUpdateData = () =>{
 
   update = false;
 
-  localStorage.setItem("todo", JSON.stringify(localdata));
+    localStorage.setItem("todo", JSON.stringify(localdata));
 
   document.getElementById("todoForm").value = "";
 
