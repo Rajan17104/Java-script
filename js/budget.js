@@ -1,21 +1,76 @@
-let h1Elem = document.createElement("h1");
-let h1TextElem = document.createTextNode("BUDGET APP");
+const handleonload = () => {
 
-h1Elem.appendChild(h1TextElem);
+    let calref =document.getElementById("submit");
+    calref.setAttribute("onclick" ,"handlesubmit()");
+    // calref.addEventListener("submit","handlesubmit()")
 
-let budgetRef = document.getElementById("budget");
-budgetRef.appendChild(h1Elem);
+    let exeref =document.getElementById("submitExe");
+    exeref.setAttribute("onclick" ,"handlesubmitExe()")
+    // exeref.addEventListener("submit","handlesubmitExe()")
 
-/*input*/
+    /*Budget*/
 
-let input1 = document.createElement("input");
-input1.setAttribute("id" , "input");
+    let budElem = document.createElement("p");
+    let budTaxElem = document.createTextNode("$0");
 
-budgetRef.appendChild(input1)
+    budElem.appendChild(budTaxElem);
 
-/*submit*/
+    let budgetref = document.getElementById("budget")
 
-// let input2 = document.createElement("submit");
-// input2.setAttribute("input", "submit");
+    budgetref.appendChild(budElem);
 
-// budgetRef.appendChild(input2)
+    /*Exepense*/
+
+    let exeElem =document.createElement("p");
+    let exeTaxElem =document.createTextNode("$0");
+
+    exeElem.appendChild(exeTaxElem);
+
+    let exebudref = document.getElementById("expense");
+
+    exebudref.appendChild(exeElem);
+
+    /*Balance*/
+
+    let balElem = document.createElement("p");
+    let balTaxElem = document.createTextNode("$0");
+
+    balElem.appendchild(balTaxElem);
+
+    let balanceref = document.getElementById("balance");
+
+    balanceref.appendChild(balElem);
+
+
+}
+
+const handlesubmit = () =>{
+
+    let val = document.getElementById("input").value;
+
+    document.getElementById("budget").innerHTML ="$"+val;
+    document.getElementById("balance").innerHTML ="$"+val;
+
+    // event.preventDefault();
+}
+
+
+const handlesubmitExe = () =>{
+
+    let val = document.getElementById("input").value;
+
+    let exe1 = document.getElementById("exe1").value;
+    let exe2 =document.getElementById("exe2").value;
+   
+    console.log(exe1);
+    console.log(exe2);
+
+    let total = val - exe2;
+
+    document.getElementById("expense").innerHTML ="$"+exe2;
+    document.getElementById("ans").innerHTML =exe1 + "Total Badget is :" +total;
+    document.getElementById("ans").style.display="block";
+}
+
+
+window.onload = handleonload;

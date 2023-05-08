@@ -5,13 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/budget.css">
 </head>
 <body>
-    
-    <form action="#" id="budget">
-        
-    </form>
 
+  
+<div class="main">
+    <h1>BUDGET APP</h1>
+    <div class="mainFrom">
+        <form action="#" id="budgetFrom">
+        
+            <h3>Please Enter Your Budget</h3>
+            <input type="text" id="input"><br><br>
+            <button id="submit">Calculate</button>
+        </form><br>
+
+        <div class="expense">
+            <form action="#" id="exp">
+                <h3>Please Enter Your Expense</h3>
+                <input type="text" id="exe1">
+                
+                <h3>Please Enter Your Expense Amount</h3>
+                <input type="text" id="exe2"><br><br>
+                <button id="submitExe">Add Exepense</button>
+            </form>
+        </div>
+    </div>    
+
+    <div id="data">
+        <div id="budgetdata">
+            <h2>BUDGET</h2>
+            <i class="fa-solid fa-money-bill-1"></i>
+            <div id="budget"></div>
+        </div>
+        <div id="expensedata">
+            <h2>EXPENSE</h2>
+            <i class="fa-regular fa-credit-card"></i>
+            <div id="expense"></div>
+        </div>
+        <div id="balancedata">
+            <h2>BALANCE</h2>
+            <i class="fa-sharp fa-regular fa-dollar-sign"></i>
+            <div id="balance"></div>
+        </div>
+    </div><br><br>
+
+    <div id="ans"></div>
+</div>
     <script src="./js/budget.js"></script>
 </body>
 </html>

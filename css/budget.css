@@ -1,0 +1,71 @@
+.main{
+    width: 650px;
+    height: 550px;
+    background-color: rgb(149, 181, 194);
+    padding: 20px;
+    margin: 0 auto;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+h1{
+    margin: 0 auto;
+    text-align: center
+}
+
+h2{
+    font-size: 30px
+}
+
+h3{
+    font-size: 18px;
+}
+
+input{
+    width: 250px;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+
+button{
+    border: 2px solid #000000;
+    /* border-radius: 10px; */
+    height: 30px;
+}
+
+.mainFrom{
+    display: flex;
+}
+
+#budgetFrom{
+    margin-right: 90px;
+}
+
+#data{
+    display: flex;
+    /* margin-right: 80px; */
+    margin: 0 auto;
+    justify-content: space-between;
+
+}
+#budgetdata ,#expensedata ,#balancedata{
+    padding: 30px;
+}
+
+#ans{
+    display: none;
+}
+
+#budgetdata i ,#expensedata i, #balancedata i{
+    font-size: 50px;
+}
+
+#budget ,#expense ,#balance{
+    font-size: 30px;
+}
+
+#ans{
+    font-size: 25px;
+}

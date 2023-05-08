@@ -9,11 +9,10 @@ let demoRef = document.getElementById("demo");
 demoRef.appendChild(h1Elem);
 
 
-
 let aElem = document.createElement("a");
 aElem.setAttribute("href" , "#");
 aElem.setAttribute("id" , "main");
-aElem.setAttribute("onClick", "handledom()")
+aElem.setAttribute("onClick", "handledom()");
 
 let aTextElem =document.createTextNode("home");
 
@@ -23,6 +22,6 @@ demoRef.appendChild(aElem);
 
 const handledom =() =>{
 
-console.log("clicked  ");
+console.log("clicked");
 
 }
