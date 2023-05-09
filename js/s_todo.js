@@ -5,7 +5,7 @@ let arr = [];
 let update = false;
 
 let uid = null;
-
+  
 const handleInsert = () =>{
 
     let val = document.getElementById("todoForm").value;

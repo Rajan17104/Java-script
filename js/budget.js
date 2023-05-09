@@ -1,7 +1,10 @@
-const handleonload = () => {
 
-    let calref =document.getElementById("budgetFrom");
-    calref.setAttribute("onsubmit" ,"handlesubmit()");
+let exeref =document.getElementById("exp");
+let calref =document.getElementById("budgetFrom");
+
+let expense =[];
+
+const handleonload = () => {
 
     /*Budget*/
 
@@ -51,43 +54,48 @@ const handlesubmit = () =>{
     event.preventDefault();
 }
 
-let exeref =document.getElementById("exp");
-
-
 
 const handlesubmitExe = () =>{
 
-    let exePalace = document.getElementById("exe1").value;
-    let exeCost =document.getElementById("exe2").value;
-    console.log(exePalace);
-    console.log(exeCost);
+    let exeName = document.getElementById("exe1").value;
+    let exeCost = document.getElementById("exe2").value;
+    console.log(exeName,exeCost);
 
-
-    let exetr = document.createElement("tr");
-    let exetd1 = document.createElement("td");
-    let exetd2 = document.createElement("td");
-    let exetd3 = document.createElement("td");
-
-    let exetd1Tax =createTextNode(exePalace);
-    let exetd2Tax =createTextNode(exeCost);
+    let trref = document.createElement("tr");
+    let td1ref = document.createElement("td");
+    let td2ref = document.createElement("td");
+    let button1 = document.createElement("button");
+    let button2 = document.createElement("button");
     
-    exetd1.appendChild(exetd1Tax);
-    exetd2.appendChild(exetd2Tax);
-    exetr.appendChild(exetd1);
-    exetr.appendChild(exetd2);
-    exetr.appendChild(exetd3);
- 
-    
+    let td1Tax = document.createTextNode(exeName);
+    let td2Tax = document.createTextNode(exeCost);
+    let btn1 = document.createTextNode("Update");
+    let btn2 = document.createTextNode("Remove");
 
+    td1ref.appendChild(td1Tax);
+    td2ref.appendChild(td2Tax);
+    button1.appendChild(btn1);
+    button2.appendChild(btn2);
     let exeref = document.getElementById("Tabledata");
 
-    exeref.appendChild(exetr)
+    exeref.appendChild(trref);
+    exeref.appendChild(td1ref);
+    exeref.appendChild(td2ref);
+    exeref.appendChild(button1);
+    exeref.appendChild(button2);
 
     event.preventDefault();
-
 }
 
-exeref.addEventListener("submit",handlesubmitExe)
+
+// const handledata = () ={
+
+
+// }
+
+exeref.addEventListener("submit",handlesubmitExe);
+calref.addEventListener("submit",handlesubmit);
+
 
 
 
