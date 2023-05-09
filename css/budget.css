@@ -1,6 +1,6 @@
 .main{
     width: 650px;
-    height: 550px;
+    height: auto;
     background-color: rgb(149, 181, 194);
     padding: 20px;
     margin: 0 auto;
@@ -55,7 +55,8 @@ button{
 }
 
 #ans{
-    display: none;
+    /* display: none; */
+    font-size: 25px;
 }
 
 #budgetdata i ,#expensedata i, #balancedata i{
@@ -64,8 +65,4 @@ button{
 
 #budget ,#expense ,#balance{
     font-size: 30px;
-}
-
-#ans{
-    font-size: 25px;
 }

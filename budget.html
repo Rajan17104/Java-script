@@ -18,7 +18,7 @@
         
             <h3>Please Enter Your Budget</h3>
             <input type="text" id="input"><br><br>
-            <button id="submit">Calculate</button>
+            <button id="submit" type="submit++">Calculate</button>
         </form><br>
 
         <div class="expense">
@@ -28,7 +28,7 @@
                 
                 <h3>Please Enter Your Expense Amount</h3>
                 <input type="text" id="exe2"><br><br>
-                <button id="submitExe">Add Exepense</button>
+                <button id="submitExe" type="submit">Add Exepense</button>
             </form>
         </div>
     </div>    
@@ -46,12 +46,23 @@
         </div>
         <div id="balancedata">
             <h2>BALANCE</h2>
-            <i class="fa-sharp fa-regular fa-dollar-sign"></i>
+            <i class="fa-solid fa-dollar-sign"></i>
             <div id="balance"></div>
         </div>
     </div><br><br>
 
-    <div id="ans"></div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>BUDGET</th>
+                <th>EXPENSE</th>
+                <th>BALANCE</th>
+            </tr>
+        </thead>
+        <tbody id="Tabledata">
+            
+        </tbody>
+    </table>   
 </div>
     <script src="./js/budget.js"></script>
 </body>

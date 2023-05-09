@@ -1,12 +1,7 @@
 const handleonload = () => {
 
-    let calref =document.getElementById("submit");
-    calref.setAttribute("onclick" ,"handlesubmit()");
-    // calref.addEventListener("submit","handlesubmit()")
-
-    let exeref =document.getElementById("submitExe");
-    exeref.setAttribute("onclick" ,"handlesubmitExe()")
-    // exeref.addEventListener("submit","handlesubmitExe()")
+    let calref =document.getElementById("budgetFrom");
+    calref.setAttribute("onsubmit" ,"handlesubmit()");
 
     /*Budget*/
 
@@ -19,6 +14,8 @@ const handleonload = () => {
 
     budgetref.appendChild(budElem);
 
+    event.preventDefault();
+
     /*Exepense*/
 
     let exeElem =document.createElement("p");
@@ -30,17 +27,17 @@ const handleonload = () => {
 
     exebudref.appendChild(exeElem);
 
+
     /*Balance*/
 
-    let balElem = document.createElement("p");
+    let balanceElem = document.createElement("p");
     let balTaxElem = document.createTextNode("$0");
 
-    balElem.appendchild(balTaxElem);
+    balanceElem.appendchild(balTaxElem); 
 
     let balanceref = document.getElementById("balance");
 
-    balanceref.appendChild(balElem);
-
+    balanceref.appendChild(balanceElem);
 
 }
 
@@ -51,26 +48,47 @@ const handlesubmit = () =>{
     document.getElementById("budget").innerHTML ="$"+val;
     document.getElementById("balance").innerHTML ="$"+val;
 
-    // event.preventDefault();
+    event.preventDefault();
 }
+
+let exeref =document.getElementById("exp");
+
 
 
 const handlesubmitExe = () =>{
 
-    let val = document.getElementById("input").value;
+    let exePalace = document.getElementById("exe1").value;
+    let exeCost =document.getElementById("exe2").value;
+    console.log(exePalace);
+    console.log(exeCost);
 
-    let exe1 = document.getElementById("exe1").value;
-    let exe2 =document.getElementById("exe2").value;
-   
-    console.log(exe1);
-    console.log(exe2);
 
-    let total = val - exe2;
+    let exetr = document.createElement("tr");
+    let exetd1 = document.createElement("td");
+    let exetd2 = document.createElement("td");
+    let exetd3 = document.createElement("td");
 
-    document.getElementById("expense").innerHTML ="$"+exe2;
-    document.getElementById("ans").innerHTML =exe1 + "Total Badget is :" +total;
-    document.getElementById("ans").style.display="block";
+    let exetd1Tax =createTextNode(exePalace);
+    let exetd2Tax =createTextNode(exeCost);
+    
+    exetd1.appendChild(exetd1Tax);
+    exetd2.appendChild(exetd2Tax);
+    exetr.appendChild(exetd1);
+    exetr.appendChild(exetd2);
+    exetr.appendChild(exetd3);
+ 
+    
+
+    let exeref = document.getElementById("Tabledata");
+
+    exeref.appendChild(exetr)
+
+    event.preventDefault();
+
 }
+
+exeref.addEventListener("submit",handlesubmitExe)
+
 
 
 window.onload = handleonload;
