@@ -2,7 +2,8 @@
 let exeref =document.getElementById("exp");
 let calref =document.getElementById("budgetFrom");
 
-let expense =[];
+let expense = [];
+
 
 const handleonload = () => {
 
@@ -33,14 +34,25 @@ const handleonload = () => {
 
     /*Balance*/
 
-    let balanceElem = document.createElement("p");
+    // let balanceElem = document.createElement("p");
+    // let balTaxElem = document.createTextNode("$0");
+
+    // balanceElem.appendchild(balTaxElem); 
+
+    // let balanceref = document.getElementById("balance");
+
+    // balanceref.appendChild(balanceElem);
+
+    let balElem = document.createElement("p");
     let balTaxElem = document.createTextNode("$0");
 
-    balanceElem.appendchild(balTaxElem); 
+    balElem.appendChild(balTaxElem);    
 
     let balanceref = document.getElementById("balance");
 
-    balanceref.appendChild(balanceElem);
+    balanceref.appendChild(balElem);
+
+    event.preventDefault();
 
 }
 
@@ -51,6 +63,7 @@ const handlesubmit = () =>{
     document.getElementById("budget").innerHTML ="$"+val;
     document.getElementById("balance").innerHTML ="$"+val;
 
+
     event.preventDefault();
 }
 
@@ -59,6 +72,7 @@ const handlesubmitExe = () =>{
 
     let exeName = document.getElementById("exe1").value;
     let exeCost = document.getElementById("exe2").value;
+
     console.log(exeName,exeCost);
 
     let trref = document.createElement("tr");
@@ -76,6 +90,7 @@ const handlesubmitExe = () =>{
     td2ref.appendChild(td2Tax);
     button1.appendChild(btn1);
     button2.appendChild(btn2);
+
     let exeref = document.getElementById("Tabledata");
 
     exeref.appendChild(trref);
@@ -84,18 +99,42 @@ const handlesubmitExe = () =>{
     exeref.appendChild(button1);
     exeref.appendChild(button2);
 
+    expense.push({
+        name:exeName,
+        cost:exeCost
+    });
+
+    console.log(expense);
+
+    handledata();
+
     event.preventDefault();
+
 }
 
+const handledata = () =>{
 
-// const handledata = () ={
+    let val = document.getElementById("input").value;
 
+    let exCO = 0;
+    let total = 0;
 
-// }
+    expense.map((v)=> total= total + parseInt(v.cost));
+
+    document.getElementById("expense").innerHTML = total;
+
+    exCO = val - total;
+
+    document.getElementById("balance").innerHTML = exCO;
+
+    if(val < total){
+        alert("Sorry")
+    }
+
+}
 
 exeref.addEventListener("submit",handlesubmitExe);
 calref.addEventListener("submit",handlesubmit);
-
 
 
 
