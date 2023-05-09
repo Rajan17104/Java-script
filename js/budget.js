@@ -128,7 +128,7 @@ const handledata = () =>{
     document.getElementById("balance").innerHTML = exCO;
 
     if(val < total){
-        alert("Sorry")
+        alert("-- Sorry -- Invalid Expenese" )
     }
 
 }
