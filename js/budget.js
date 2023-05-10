@@ -4,6 +4,9 @@ let calref =document.getElementById("budgetFrom");
 
 let expense = [];
 
+let update = false;
+
+let updateID = null;
 
 const handleonload = () => {
 
@@ -63,10 +66,10 @@ const handlesubmitExe = () =>{
 
     let exeName = document.getElementById("exe1").value;
     let exeCost = document.getElementById("exe2").value;
-    console.log(exeName,exeCost);
+    // console.log(exeName,exeCost);
     
     let random = Math.floor(Math.random() * 100);
-    console.log(random);
+    // console.log(random);
 
     let trref = document.createElement("tr");
     trref.setAttribute("id","row" + random);
@@ -75,6 +78,8 @@ const handlesubmitExe = () =>{
     let td2ref = document.createElement("td");
     let td3ref =document.createElement("td");
     let button1 = document.createElement("button");
+    button1.setAttribute("onclick","handleUpdate()");
+
     let button2 = document.createElement("button");
     button2.setAttribute("onclick","handleRemove("+ random +")");
     
@@ -106,7 +111,7 @@ const handlesubmitExe = () =>{
         cost:exeCost
     });
 
-    console.log(expense);
+    // console.log(expense);
 
     handledata();
     
@@ -140,25 +145,81 @@ const handledata = () =>{
 }
 
 const handleRemove = (random) =>{
-    console.log(random);
+    // console.log(random);
 
     let trref = document.getElementById("row"+ random);
-    console.log(trref);
+    // console.log(trref);
 
     trref.remove();
 
-    let fData = expense.filter((v,i) => v.id != random);
+    expense.map ((v,i) =>{
+        if(v.id === random){
+            expense.splice(i,1)
+        }
+    })
 
-    expense = [...fData];
+    // console.log(expense);
 
-    console.log(fData);
+    // let fData = expense.filter((v,i) => v.id != random);
+
+    // expense = [...fData];
+
+    // console.log(fData);
 
 }
 
+const handleUpdate = (i) =>{
 
+    console.log('clicked');
+
+        // expense.map((i)=>{
+
+        update = true;
+
+        updateID = i;
+
+        console.log(expense[i]);
+
+        document.getElementById("exe1").value = expense[i];
+        document.getElementById("exe2").value = expense[i];
+
+    // })
+    event.preventDefault();
+
+}
+
+const handleDes = () =>{
+
+    if(update){
+        handleUpdateData();
+    }else{
+        handlesubmit();
+    }
+  
+    event.preventDefault();
+  
+} 
+
+const handleUpdateData = () =>{
+
+    console.log('Update call');
+    
+    let newval1 = document.getElementById("exe1").value;
+    let newval2 = document.getElementById("exe2").value
+    console.log('dsd');
+
+    expense[i] =  newval1;
+    expense[i] =  newval2;
+
+    update = false;
+
+
+    event.preventDefault(); 
+
+}
 
 exeref.addEventListener("submit",handlesubmitExe);
-calref.addEventListener("submit",handlesubmit);
+calref.addEventListener("submit",handleDes);
 
 
 window.onload = handleonload;

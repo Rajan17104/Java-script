@@ -111,7 +111,7 @@ const handleUpdateData = () =>{
 
   handlePrint();
 
-  event.preventDefault();
+  event.preventDefault(); 
 
 }
 
