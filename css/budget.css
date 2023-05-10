@@ -67,7 +67,9 @@ button{
     font-size: 30px;
 }
 
-
-/* #table{
+#table{
     display: none;
-} */
+    width: auto;
+}
+
+
