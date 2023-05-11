@@ -172,8 +172,6 @@ const handleUpdate = (i) =>{
 
     console.log('clicked');
 
-        // expense.map((i)=>{
-
         update = true;
 
         updateID = i;
@@ -183,7 +181,23 @@ const handleUpdate = (i) =>{
         document.getElementById("exe1").value = expense[i];
         document.getElementById("exe2").value = expense[i];
 
-    // })
+        // let newval1 = document.getElementById("exe1").value;
+        // let newval2 = document.getElementById("exe2").value
+        
+        // expense.map((v) =>{
+        //     if(v.id === random){
+        //         newval1 = v.exeName;
+        //         newval2 = v.exeCost;  
+        //     }
+        // });
+        
+        // console.log(expense[newval1]);
+        
+        
+        // document.getElementById("exe1").value = expense[newval1];
+        // document.getElementById("exe2").value = expense[newval2];
+    
+
     event.preventDefault();
 
 }
@@ -213,6 +227,21 @@ const handleUpdateData = () =>{
 
     update = false;
 
+    
+    // let newval1 = document.getElementById("exe1").value;
+    // let newval2 = document.getElementById("exe2").value;
+    
+    // expense.map((v) =>{
+    //     if(v.id === upid){
+    //         v.exeName = newval1;
+    //         v.exeCost = newval2;  
+    //     }
+    // });
+    
+    // console.log(expense);
+    
+    // update = false;
+    
 
     event.preventDefault(); 
 
