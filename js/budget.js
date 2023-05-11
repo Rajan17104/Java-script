@@ -52,7 +52,7 @@ const handleonload = () => {
 
 const handlesubmit = () =>{
 
-    let val = document.getElementById("input").value;
+    let val = document.getElementById("input").value; 
 
     document.getElementById("budget").innerHTML ="$"+val;
     document.getElementById("balance").innerHTML ="$"+val;
@@ -105,12 +105,25 @@ const handlesubmitExe = () =>{
 
     exeref.appendChild(trref);
 
-    expense.push({
-        id:random,
-        name:exeName,
-        cost:exeCost
-    });
+    let localdata =JSON.parse(localStorage.getItem("budget"));
 
+    if(localdata){
+        localdata.push({
+            id:random,
+            name:exeName,
+            cost:exeCost
+        });
+        localStorage.setItem("budget",JSON.stringify(localdata));
+    }else{
+        expense.push({
+            id:random,
+            name:exeName,
+            cost:exeCost
+        });
+        localStorage.setItem("budget",JSON.stringify(expense));
+    }
+
+  
     // console.log(expense);
 
     handledata();
@@ -126,7 +139,9 @@ const handledata = () =>{
     let exCO = 0;
     let total = 0;
 
-    expense.map((v)=> {
+    localStorage.setItem("budget",JSON.stringify(localdata));
+
+    localStorage.map((v)=> {
         total = total + parseInt(v.cost)
     });
 
@@ -178,6 +193,8 @@ const handleUpdate = (random) =>{
     document.getElementById("exe1").value = name;
     document.getElementById("exe2").value = cost;
 
+   
+
     event.preventDefault();
 
 }
@@ -215,8 +232,14 @@ const handleupdateData = () =>{
             return a;
         }
 
-    })
+    });
+
+    let tr = document.getElementById("row"+uid);
+
+    tr.children[0].innerHTML=newname
+    tr.children[1].innerHTML=newcost
     
+    handledata();   
     console.log(uData);
 
 }
