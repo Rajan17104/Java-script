@@ -168,34 +168,35 @@ const handleRemove = (random) =>{
 
 }
 
-const handleUpdate = (i) =>{
+const handleUpdate = (random) =>{
 
     console.log('clicked');
 
-        update = true;
+    //     update = true;
 
-        updateID = i;
+    //     console.log(expense[i]);
 
-        console.log(expense[i]);
+    //     updateID = i;
 
-        document.getElementById("exe1").value = expense[i];
-        document.getElementById("exe2").value = expense[i];
+    //     document.getElementById("exe1").value = expense[i];
+    //     document.getElementById("exe2").value = expense[i];
 
-        // let newval1 = document.getElementById("exe1").value;
-        // let newval2 = document.getElementById("exe2").value
+        let newval1 = document.getElementById("exe1").value;
+        let newval2 = document.getElementById("exe2").value
         
-        // expense.map((v) =>{
-        //     if(v.id === random){
-        //         newval1 = v.exeName;
-        //         newval2 = v.exeCost;  
-        //     }
-        // });
+        expense.map((v) =>{
+            if(v.id === random){
+                newval1.v = v.exeName;
+                newval2.v = v.exeCost;  
+            }
+        });
         
-        // console.log(expense[newval1]);
-        
-        
-        // document.getElementById("exe1").value = expense[newval1];
-        // document.getElementById("exe2").value = expense[newval2];
+        updateID = random;
+
+        console.log(expense[newval1]);
+            
+        document.getElementById("exe1").value = expense[newval1];
+        document.getElementById("exe2").value = expense[newval2];
     
 
     event.preventDefault();
@@ -218,30 +219,30 @@ const handleUpdateData = () =>{
 
     console.log('Update call');
     
-    let newval1 = document.getElementById("exe1").value;
-    let newval2 = document.getElementById("exe2").value
-    console.log('dsd');
-
-    expense[i] =  newval1;
-    expense[i] =  newval2;
-
-    update = false;
-
-    
     // let newval1 = document.getElementById("exe1").value;
-    // let newval2 = document.getElementById("exe2").value;
-    
-    // expense.map((v) =>{
-    //     if(v.id === upid){
-    //         v.exeName = newval1;
-    //         v.exeCost = newval2;  
-    //     }
-    // });
-    
-    // console.log(expense);
-    
+    // let newval2 = document.getElementById("exe2").value
+    // console.log('dsd');
+
+    // expense[i] =  newval1;
+    // expense[i] =  newval2;
+
     // update = false;
+
     
+    let newval1 = document.getElementById("exe1").value;
+    let newval2 = document.getElementById("exe2").value;
+    
+    expense.map((v) =>{
+        if(v.id === updateID){
+            v.exeName = newval1;
+            v.exeCost = newval2;  
+        }
+    });
+    
+    console.log(expense);
+    
+    update = false;
+    updateID =null;
 
     event.preventDefault(); 
 
