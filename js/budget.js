@@ -104,23 +104,12 @@ const handlesubmitExe = () =>{
 
     exeref.appendChild(trref);
 
-    let localdata =JSON.parse(localStorage.getItem("budget"));
 
-    if(localdata){
-        localdata.push({
-            id:random,
-            name:exeName,
-            cost:exeCost
-        });
-        localStorage.setItem("budget",JSON.stringify(localdata));
-    }else{
         expense.push({
             id:random,
             name:exeName,
             cost:exeCost
-        });
-        localStorage.setItem("budget",JSON.stringify(expense));
-    }
+        })
     
 
     // console.log(expense);
@@ -236,6 +225,7 @@ const handleupdateData = () =>{
     tr.children[0].innerHTML=newname;
     tr.children[1].innerHTML=newcost;
 
+    handledata();
 }
 
 
