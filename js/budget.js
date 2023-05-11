@@ -6,7 +6,7 @@ let expense = [];
 
 let update = false;
 
-let updateID = null;
+let uid = null;
 
 const handleonload = () => {
 
@@ -78,7 +78,7 @@ const handlesubmitExe = () =>{
     let td2ref = document.createElement("td");
     let td3ref =document.createElement("td");
     let button1 = document.createElement("button");
-    button1.setAttribute("onclick","handleUpdate()");
+    button1.setAttribute("onclick","handleUpdate("+random+")");
 
     let button2 = document.createElement("button");
     button2.setAttribute("onclick","handleRemove("+ random +")");
@@ -136,11 +136,13 @@ const handledata = () =>{
 
     document.getElementById("balance").innerHTML = exCO;
 
-    if(val < total){
-        alert("-- Sorry -- Invalid Expenese Amount")
-    }
+    // if(val < total){
+    //     alert("-- Sorry -- Invalid Expenese Amount")
+    // }
 
     document.getElementById("table").style.display="block"
+
+    event.preventDefault();
 
 }
 
@@ -158,46 +160,23 @@ const handleRemove = (random) =>{
         }
     })
 
-    // console.log(expense);
-
-    // let fData = expense.filter((v,i) => v.id != random);
-
-    // expense = [...fData];
-
-    // console.log(fData);
-
 }
 
 const handleUpdate = (random) =>{
 
-    console.log('clicked');
+    update = true;
 
-    //     update = true;
+    let Fdata = expense.filter((a,i) => a.id === random);
 
-    //     console.log(expense[i]);
+    console.log(Fdata);
 
-    //     updateID = i;
+    uid = random;
 
-    //     document.getElementById("exe1").value = expense[i];
-    //     document.getElementById("exe2").value = expense[i];
+    let name = Fdata[0].name;
+    let cost = Fdata[0].cost;
 
-        let newval1 = document.getElementById("exe1").value;
-        let newval2 = document.getElementById("exe2").value
-        
-        expense.map((v) =>{
-            if(v.id === random){
-                newval1.v = v.exeName;
-                newval2.v = v.exeCost;  
-            }
-        });
-        
-        updateID = random;
-
-        console.log(expense[newval1]);
-            
-        document.getElementById("exe1").value = expense[newval1];
-        document.getElementById("exe2").value = expense[newval2];
-    
+    document.getElementById("exe1").value = name;
+    document.getElementById("exe2").value = cost;
 
     event.preventDefault();
 
@@ -206,50 +185,45 @@ const handleUpdate = (random) =>{
 const handleDes = () =>{
 
     if(update){
-        handleUpdateData();
+        handleupdateData();
     }else{
-        handlesubmit();
+        handlesubmitExe();
     }
-  
-    event.preventDefault();
-  
-} 
-
-const handleUpdateData = () =>{
-
-    console.log('Update call');
-    
-    // let newval1 = document.getElementById("exe1").value;
-    // let newval2 = document.getElementById("exe2").value
-    // console.log('dsd');
-
-    // expense[i] =  newval1;
-    // expense[i] =  newval2;
-
-    // update = false;
-
-    
-    let newval1 = document.getElementById("exe1").value;
-    let newval2 = document.getElementById("exe2").value;
-    
-    expense.map((v) =>{
-        if(v.id === updateID){
-            v.exeName = newval1;
-            v.exeCost = newval2;  
-        }
-    });
-    
-    console.log(expense);
-    
-    update = false;
-    updateID =null;
-
-    event.preventDefault(); 
 
 }
 
-exeref.addEventListener("submit",handlesubmitExe);
-calref.addEventListener("submit",handleDes);
+const handleupdateData = () =>{
+
+    console.log("Update call");
+
+   let newval1 = document.getElementById("exe1").value;
+   let newval2 = document.getElementById("exe2").value;
+
+    let newname = newval1;
+    let newcost = newval2;
+
+   console.log(newval1 , newval2);
+
+    let uData = expense.map((a) =>{
+        if(a.id === uid){
+            return{
+                id:uid,
+                name:newname,
+                cost:newcost
+            }
+        }else{
+            return a;
+        }
+
+    })
+    
+    console.log(uData);
+
+}
+
+
+exeref.addEventListener("submit",handleDes);
+calref.addEventListener("submit",handlesubmit);
 
 
 window.onload = handleonload;
