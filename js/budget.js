@@ -223,9 +223,12 @@ const handleupdateData = () =>{
     let tr =document.getElementById("row"+uid);
 
     tr.children[0].innerHTML=newname;
-    tr.children[1].innerHTML=newcost;
+    tr.children[1].innerHTML=newcost;    
 
-    handledata();
+    document.getElementById("expense").innerHTML = newval2;
+
+    handledata();   
+
 }
 
 
