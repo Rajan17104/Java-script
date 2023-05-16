@@ -225,7 +225,7 @@ const handleupdateData = () =>{
     tr.children[0].innerHTML=newname;
     tr.children[1].innerHTML=newcost;    
 
-    document.getElementById("expense").innerHTML = newval2;
+    document.getElementById("expense").innerHTML = tr.children[1];
 
     handledata();   
 
