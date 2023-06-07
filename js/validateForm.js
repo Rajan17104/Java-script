@@ -52,7 +52,9 @@ function validateForm () {
         document.getElementById("mobileErr").innerHTML = "please enter mobile No."
     }else{
     
-        if (/^\d{10}$/.test(mobileVal)) {
+        let regex =/^\d{10}$/
+
+        if (regex.test(mobileVal)) {
             document.getElementById("mobileErr").innerHTML = ""     
         } else {
             document.getElementById("mobileErr").innerHTML = "please enter valid mobile No."   
