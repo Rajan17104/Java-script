@@ -23,7 +23,6 @@ const handleInsert = () =>{
       localStorage.setItem("todo",JSON.stringify(arr));
     }
 
-    handlePrint();
 
     event.preventDefault();
 

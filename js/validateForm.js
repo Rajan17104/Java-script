@@ -19,23 +19,44 @@ function validateForm () {
 
 
     if(nameVal === ''){
-        document.getElementById("nameErr").innerHTML = "please enter valid name."
+        document.getElementById("nameErr").innerHTML = "please enter name."
     }else{
-        document.getElementById("nameErr").innerHTML = ""
+        let regex = /^[a-zA-Z ]{2,30}$/;
+
+        if(regex.test(nameVal)){
+            document.getElementById("nameErr").innerHTML = ""
+        }else{
+            document.getElementById("nameErr").innerHTML = "please enter valid name."   
+        }
+       
 
     }
+
 
     if(emailVal === ''){
-        document.getElementById("emailErr").innerHTML = "please enter valid email."
+        document.getElementById("emailErr").innerHTML = "please enter email."
     }else{
-        document.getElementById("emailErr").innerHTML = ""
+       let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        if(regex.test(emailVal)){
+            document.getElementById("emailErr").innerHTML = ""
+        }else{
+            document.getElementById("emailErr").innerHTML = "please enter valid email."   
+
+        }
 
     }
 
+
     if(mobileVal === ''){
-        document.getElementById("mobileErr").innerHTML = "please enter valid mobile No."
+        document.getElementById("mobileErr").innerHTML = "please enter mobile No."
     }else{
-        document.getElementById("mobileErr").innerHTML = ""
+    
+        if (/^\d{10}$/.test(mobileVal)) {
+            document.getElementById("mobileErr").innerHTML = ""     
+        } else {
+            document.getElementById("mobileErr").innerHTML = "please enter valid mobile No."   
+        }
 
     }
 
@@ -54,12 +75,12 @@ function validateForm () {
     }
     
 
-    // if(hobbyVal === ''){
-    //     document.getElementById("hobbyErr").innerHTML = "please select valid hobby."
-    // }else{
-    //     document.getElementById("hobbyErr").innerHTML = ""
+    if(hobbyVal === ''){
+        document.getElementById("hobbyErr").innerHTML = "please select valid hobby."
+    }else{
+        document.getElementById("hobbyErr").innerHTML = ""
 
-    // }
+    }
     
 
     return false;
