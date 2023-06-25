@@ -1,4 +1,4 @@
-function validateForm () {
+    function validateForm () {
 
     console.log('sdfsd');
 
