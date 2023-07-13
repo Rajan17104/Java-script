@@ -1,13 +1,13 @@
-///////////---Array---///////////
+/////////---Array---///////////
 
-// let arr =[10,20,30];
+let arr =[10,20,30];
 
-// console.log(arr);
+console.log(arr);
 
 
 
 /////////---Function---/////////
 
-function demo() {
+// function demo() {
 
-}
+// }

@@ -14,9 +14,13 @@ class student {
         console.log('Name: ' + this.name);
     }
 
+    /****** polymorphism ******/
+
     addmission_process(){
         console.log('addmission date');
     }
+
+    /*************************/
 
 }
 
@@ -40,14 +44,19 @@ class course extends student{
         console.log('course study: ' + this.course_study);
     }
 
+   /****** polymorphism ******/
+
     addmission_process(){
         console.log('every month new techology');
     }
+
+    /*************************/
 
 }
 
 let c1 = new course (101,'amit','react');
 c1.__proto__.course_duration = '10 month';
-c1.__proto__.course_study = 'B.C.A'
+c1.__proto__.course_study = 'B.C.A';
 c1.course_details();
+c1.addmission_process();
 // c1.basic_info();
